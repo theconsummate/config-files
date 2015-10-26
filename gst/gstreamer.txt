@@ -1,0 +1,55 @@
+gst-launch audiotestsrc freq=1000 ! mulawenc ! rtppcmupay ! queue ! udpsink host=localhost port=5000
+
+gst-launch filesrc location=my-random-media-file.mpeg ! decodebin ! videoconvert ! xvimagesink
+
+gst-launch filesrc location=sample.mp3 ! mulawenc ! rtppcmupay ! queue ! udpsink host=127.0.0.1 port=5000
+
+
+
+gst-launch filesrc location=sample.mp3 ! mulawenc ! rtppcmupay send-config=true ! queue ! udpsink host=127.0.0.1 port=5000
+
+gst-launch filesrc location=sample.mp3 ! audio/mpeg! rtppcmupay ! queue ! udpsink host=127.0.0.1 port=5000
+
+gst-launch alsasrc ! ffenc_aac ! audio/mpeg, mapping=/stream ! udpsink port=6969 host=127.0.0.1
+
+gst-launch audiotestsrc ! audioconvert ! audio/x-raw-int,channels=1,depth=16,width=16,rate=44100 ! rtpL16pay  ! udpsink host=localhost port=5000
+
+gst-launch-1.0 filesrc location=sample.mp3 ! mad ! rtppcmupay ! queue ! udpsink host=localhost port=5000vn
+
+gst-launch-1.0 filesrc location=sample.mp3 ! decodebin ! audioconvert ! udpsink host=localhost port=5000
+
+gst-launch filesrc location=acdc.ogg ! decodebin ! audioconvert ! audioresample ! alsasink
+
+gst-launch filesrc location=acdc.ogg ! oggdemux name=d d. ! queue ! rtptheorapay name=pay0 pt=96 d. ! queue ! rtpvorbispay name=pay1 pt=97 
+
+
+ffserver -f ~/ffserver.conf & ffmpeg -i ~/Music/acdc.ogg http://localhost:4000/feed1.ffm
+
+fuser 4000/tcp -k
+
+./test-video --gst-debug=WARNING
+
+./test-ogg ~/Music/amy.ogg --gst-debug=WARNING
+gst-inspect | grep 'rtp\w*pay'
+
+str = g_strdup_printf ("( "
+      "filesrc location=%s ! oggdemux name=d "
+      "d. ! queue ! rtptheorapay name=pay0 pt=96 "
+      "d. ! queue ! rtpvorbispay name=pay1 pt=97 " ")", argv[1]);
+
+str = g_strdup_printf ("( "
+      "filesrc location=%s ! wavparse name=d "
+      "d. ! rtptheorapay name=pay0 pt=96 "
+      "d. ! rtpvorbispay name=pay1 pt=97 " ")", argv[1]);
+
+ str = g_strdup_printf ("( "
+      "filesrc location=%s !  wavparse ! rtpL16pay name=pay1 pt=97 " ")", argv[1]);
+
+gst-launch-1.0 filesrc location=/home/dhruv/Music/test1.wav ! wavparse name=d d.! audioconvert ! audioresample ! alawenc d. ! ! audioconvert ! audioresample ! alawenc ! alawdec alsasink d. ! alawdec alsasink 
+
+gst-launch-1.0 filesrc location=%s ! wavparse name=d 
+      d. ! audioconvert ! audioresample ! alawenc 
+      d. ! audioconvert ! audioresample ! alawenc
+
+
+gst-launch-1.0 filesrc location=test1.wav ! wavparse ! audioconvert ! "audio/x-raw,channels=2" ! deinterleave name=d  d.src_0 ! queue ! audioconvert ! vorbisenc ! oggmux ! filesink location=channel1.ogg  d.src_1 ! queue ! audioconvert ! vorbisenc ! oggmux ! filesink location=channel2.ogg

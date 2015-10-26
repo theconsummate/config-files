@@ -1,0 +1,79 @@
+./examples/test-ogg --gst-debug=INFO >debug.log 2>&1
+
+scp -i ~/awsperm/project-truvu.pem /home/dhruv/Downloads/flite_iitm_indic_male ubuntu@54.196.54.166:~/gst-home/
+
+ssh -i ~/awsperm/project-truvu.pem ubuntu@54.196.54.166
+
+python -c "from subprocess import call; print [ call(['cp', str(x).strip() + '.wav', 't3']) for x in open('telugu-set2.txt','r')] "
+
+/usr/lib/x86_64-linux-gnu/gstreamer-1.0
+gst-launch-1.0 rtspsrc location="rtsp://127.0.0.1:8554/tts?lang=hi&text=%E0%A4%86%E0%A4%9C+%E0%A4%B8%E0%A5%8B%E0%A4%AE%E0%A4%B5%E0%A4%BE%E0%A4%B0+%E0%A4%B9%E0%A5%87" ! rtpamrdepay ! amrnbdec ! pulsesink
+
+Downloads:
+gcc if not available : sudo apt-get install build-essential
+libffi :ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
+if not installed -> sudo apt-get install zlib1g-dev
+download pkg-config if required -> http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.tar.gz
+download gettext -> http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.5.tar.gz
+glib :http://ftp.gnome.org/pub/gnome/sources/glib/2.46/glib-2.46.0.tar.xz
+
+bison and flex: sudo apt-get install bison flex
+gstreamer : http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.6.0.tar.xz
+see if gst-inspect works. If not set export LD_LIBRARY_PATH=/usr/local/lib in bashrc
+
+set plugin path if it is not automatically picked up: (in .bashrc)
+export GST_PLUGIN_PATH=/usr/local/lib/gstreamer-1.0
+if gst-inspect can't find gstreamer:
+export LD_LIBRARY_PATH=/usr/local/lib
+
+flitesrc:
+autoconf: http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
+automake -> ftp://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
+libtool -> http://gnu.mirror.iweb.com/libtool/libtool-2.4.6.tar.gz
+
+install plugin.
+
+alsalib: http://alsa.cybermirror.org/lib/alsa-lib-1.0.29.tar.bz2
+libogg: http://downloads.xiph.org/releases/ogg/libogg-1.3.2.tar.xz
+libvorbis: http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.gz
+libtheora: http://downloads.xiph.org/releases/theora/libtheora-1.1.1.tar.bz2
+base plugins: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.6.0.tar.xz
+bad plugins: http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.6.0.tar.xz
+good plugins: http://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.6.0.tar.xz
+--ugly plugins: http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.6.0.tar.xz
+amr: http://sourceforge.net/projects/opencore-amr/files/opencore-amr/opencore-amr-0.1.3.tar.gz/download
+sudo apt-get install yasm
+--libav: http://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.6.0.tar.xz
+rtsp-server : http://gstreamer.freedesktop.org/src/gst-rtsp-server/gst-rtsp-server-1.6.0.tar.xz
+
+git clone https://github.com/theconsummate/gst-plugin.git
+mv gst-plugin gst-flite
+
+gst-server installation:
+
+ogglibs from here-> ogg/theora/vorbis: http://downloads.xiph.org/releases/
+
+str = g_strdup_printf ("( "
+      "filesrc location=%s ! wavparse ! audioconvert ! audioresample ! alawenc ! rtppcmapay name=pay0 pt=96 " ")", argv[1]);
+
+str = g_strdup_printf ("( "
+      "filesrc location=%s ! wavparse ! audioconvert ! audioresample ! vorbisenc ! rtpvorbispay name=pay0 pt=96 " ")", argv[1]);
+
+wav file specs:
+PCM	Mono	352kbps	8 bit	48000Hz
+
+steps to do:
+remove everything.
+install gstreamer, libab
+
+alsa-lib-1.0.29.tar.bz2
+gst-libav-1.6.0
+gst-plugins-bad-1.6.0
+gst-plugins-base-1.6.0
+gst-plugins-good-1.6.0
+gst-plugins-ugly-1.6.0
+gstreamer-1.6.0
+gst-rtsp-server-1.6.0
+libogg-1.3.2
+libtheora-1.1.1
+libvorbis-1.3.5

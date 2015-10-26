@@ -1,0 +1,2 @@
+# fastboot protocol on manta (Nexus 10) f613c0be 0e8d:2003
+SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", ATTR{idProduct}=="2003", MODE="0666", OWNER="firstouch"

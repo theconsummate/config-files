@@ -1,0 +1,36 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          jboss
+# Required-Start:    $local_fs $remote_fs $network $syslog
+# Required-Stop:     $local_fs $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+### END INIT INFO
+
+TTS_HOME=${TTS_HOME:-"/home/dhruv/Downloads/gst-rtsp-server-1.6.0"}
+export PATH=$TTS_HOME/examples:$PATH
+SERVICE_NAME=${SERVICE_NAME:-"tts"}
+export GST_DEBUG_FILE=/home/dhruv/Downloads/gst-rtsp-server-1.6.0/debug.log
+export GST_DEBUG=WARNING
+
+case "$1" in
+    start)
+        echo "Starting TTS server"
+        start-stop-daemon --start --oknodo --user dhruv --name tts --make-pidfile --pidfile /home/dhruv/daemon/tts.pid --quiet --background --exec ${TTS_HOME}/examples/test-ogg  
+    ;;
+    stop)
+        echo "Stopping TTS server"
+        start-stop-daemon --stop --oknodo --user dhruv --pidfile /home/dhruv/daemon/tts.pid --retry 5
+    ;;
+    restart)
+      $0 stop
+      $0 start
+      ;;
+    *)
+        echo "Usage: /etc/init.d/${SERVICE_NAME} {start|stop|restart}"
+        exit 1
+    ;;
+esac
+
+exit 0
+

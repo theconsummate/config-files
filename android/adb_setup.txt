@@ -1,0 +1,7 @@
+Instructions for getting adb to work : 
+ 1) add the vendor id device id to 51-android.rules in - sudo gedit /etc/udev/rules.d/51-android.rules
+ 2) change the permissions - sudo chmod a+rx /etc/udev/rules.d/51-android.rules 
+ 3) Restart udev - sudo /etc/init.d/udev restart or sudo service udev restart
+ 4) add the vendor id with 0x at the start to /home/zalak/.android/adb_usb.ini
+ 5) adb kill-server and then adb start-server
+ 6) Restart pc and device, then reconnect device with usb debugging on (and mass storage off)
