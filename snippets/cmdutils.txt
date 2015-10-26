@@ -1,0 +1,11 @@
+set volume -> amixer -D pulse sset Master 5%+
+toggle on -> amixer -D pulse set Master 1+ toggle
+nmcli device wifi connect 'XT1022 7447' password ce752366d896
+lkjasdmnbzxc
+nmcli d wifi list
+
+usb mounting ->
+sudo fdisk -l
+mount: sudo mount -t vfat /dev/mmcblk0p1 /media/external
+unmount: sudo umount /dev/mmcblk0p1
+

@@ -1,0 +1,40 @@
+{
+  "lists": [
+    {
+      "pyenv": [
+        {
+          "dj": "source pythonenv/django_env/bin/activate"
+        },
+        {
+          "s": "python3 manage.py runserver"
+        },
+        {
+          "sh": "python3 manage.py shell"
+        }
+      ]
+    },
+    {
+      "unix": [
+        {
+          "ins": "sudo apt-get install"
+        },
+        {
+          "gst": "./test-ogg --gst-debug=WARNING"
+        },
+        {
+          "gste": "./examples/test-ogg --gst-debug=WARNING"
+        }
+      ]
+    },
+    {
+      "aws": [
+        {
+          "singapore": "ssh -i /home/dhruv/awsperm/mofirst-tts-rtsp-test.pem ubuntu@54.179.129.162"
+        },
+        {
+          "virginia_tts": "ssh -i /home/dhruv/awsperm/mofirst-tts-test.pem ubuntu@52.91.217.104"
+        }
+      ]
+    }
+  ]
+}
