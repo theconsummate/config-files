@@ -3,7 +3,7 @@
 
 echo "start install!"
 mkdir gst-home
-cd gst-homens-ugly-1.6.0.tar.xz
+cd gst-home
 sudo apt-get install build-essential
 
 wget ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
