@@ -16,10 +16,17 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 # '\$(__git_ps1)' adds git-related stuff
 # '\W' adds the name of the current directory
 
+# ipython notebook
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 
 ##################
 ### MY ALIASES ###
 ##################
+
+# python cheat
+export CHEATCOLORS=true
 
 # mongodb
 alias mongod='mongod --dbpath ~/data/db'
@@ -54,6 +61,17 @@ export CLICOLOR=1
 # my custom color codes
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+####################
+### APACHE SPARK ###
+####################
+export SPARK_HOME=/usr/local/spark
+
+# export SPARK_HOME=~/install/spark-1.6.1-bin-hadoop2.6
+# export PATH=$SPARK_HOME/bin:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8C)
+export HADOOP_HOME=/usr/local/Cellar/hadoop/2.7.2/libexec/
+export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/2.7.2/libexec/etc/hadoop/
+
 # Command Prompt
 export PS1="$blue\! $red\T$green\$(__git_ps1)$purple \u:\W $ $reset"
-export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/Library/Android/sdk/platform-tools/:~/Library/Android/sdk/build-tools/:~/Library/Android/sdk/ndk-bundle/
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/Library/Android/sdk/platform-tools/:~/Library/Android/sdk/build-tools/:~/Library/Android/sdk/ndk-bundle/:$SPARK_HOME/bin
