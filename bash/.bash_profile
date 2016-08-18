@@ -20,6 +20,8 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# brew analytics off
+export HOMEBREW_NO_ANALYTICS=1
 
 ##################
 ### MY ALIASES ###
@@ -53,6 +55,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# alias from boom
+alias tts='adb shell am startservice com.indus.texttospeech/com.indus.texttospeech.TtsService'
+alias ndk='ndk-build "NDK_DEBUG=1"'
+
 export CLICOLOR=1
 # light background
 # export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -75,3 +81,15 @@ export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/2.7.2/libexec/etc/hadoop/
 # Command Prompt
 export PS1="$blue\! $red\T$green\$(__git_ps1)$purple \u:\W $ $reset"
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/Library/Android/sdk/platform-tools/:~/Library/Android/sdk/build-tools/:~/Library/Android/sdk/ndk-bundle/:$SPARK_HOME/bin
+
+####### CUDA ######
+export CUDA_HOME=/usr/local/cuda
+# export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
+export DYLD_LIBRARY_PATH="$CUDA_HOME/lib":$DYLD_LIBRARY_PATH
+export PATH="$CUDA_HOME/bin:$PATH"
+
+## bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
