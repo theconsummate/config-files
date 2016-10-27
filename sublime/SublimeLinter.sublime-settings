@@ -7,23 +7,36 @@
         "gutter_theme_excludes": [],
         "lint_mode": "background",
         "linters": {
+            "flake8": {
+                "@disable": false,
+                "args": [],
+                "builtins": "",
+                "excludes": [],
+                "executable": "",
+                "ignore": "",
+                "jobs": "1",
+                "max-complexity": -1,
+                "max-line-length": null,
+                "select": "",
+                "show-code": false
+            },
             "jshint": {
                 "@disable": false,
                 "args": [],
                 "excludes": []
             },
-            "pep8": {
+            "json": {
+                "@disable": false,
+                "args": [],
+                "excludes": [],
+                "strict": true
+            },
+            "flake8": {
                 "@disable": false,
                 "args": [],
                 "excludes": [],
                 "ignore": "E501,C0301,W0142,W0402,R0201,E1101,E1102,C0103,R0901,R0903,R0904,C1001,W0223,W0232,W0201,E1103,R0801,C0111",
-                "max-line-length": 100,
-                "select": ""
-            },
-            "pyflakes": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
+                "max-line-length": 100
             },
             "pylint": {
                 "@disable": true,
@@ -34,6 +47,12 @@
                 "paths": [],
                 "rcfile": "",
                 "show-codes": false
+            },
+            "shellcheck": {
+                "@disable": false,
+                "args": [],
+                "exclude": "",
+                "excludes": []
             }
         },
         "mark_style": "fill",
@@ -51,7 +70,7 @@
         },
         "rc_search_limit": 3,
         "shell_timeout": 10,
-        "show_errors_on_save": true,
+        "show_errors_on_save": false,
         "show_marks_in_minimap": true,
         "syntax_map": {
             "html (django)": "html",
@@ -65,4 +84,3 @@
         "wrap_find": true
     }
 }
-

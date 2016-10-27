@@ -3,13 +3,25 @@
 
     // tabs and whitespace
     "auto_indent": true,
-    "rulers": [109],
+    "rulers": [139],
     "smart_indent": true,
     "tab_size": 4,
     "trim_automatic_white_space": true,
     "translate_tabs_to_spaces": true,
     "use_tab_stops": true,
     "word_wrap": true,
-    "wrap_width": 110
+    "wrap_width": 140,
+    "ensure_newline_at_eof_on_save": true,
+    "folder_exclude_patterns":
+    [
+        ".svn",
+        ".git",
+        ".hg",
+        "CVS",
+        "__pycache__"
+    ],
+    "indent_to_bracket": true,
+    "shift_tab_unindent": true,
+    "trim_trailing_white_space_on_save": true
 }
 
