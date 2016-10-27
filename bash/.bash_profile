@@ -4,7 +4,7 @@ source ~/.git-completion.bash
 # colors!
 green="\[\033[1;32m\]"
 blue="\[\033[1;34m\]"
-yellow="\[\033[1;33m\]"
+# yellow="\[\033[1;33m\]"
 red="\[\033[1;31m\]"
 purple="\[\033[1;35m\]"
 reset="\[\033[0m\]"
@@ -38,8 +38,9 @@ alias reload='source ~/.bash_profile'
 
 # git commamands simplified
 alias gst='git status'
+alias gdf='git diff'
 alias gco='git checkout'
-alias gci='git commit'
+alias gci='git commit -m '
 alias grb='git rebase'
 alias gbr='git branch'
 alias gad='git add -A'
@@ -93,3 +94,12 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+### aws/softlayer servers
+alias wowmongo='ssh -i ~/awsperm/wow_mongodb root@161.202.204.122'
+
+## thefuck
+eval "$(thefuck --alias zz)"
+export THEFUCK_REQUIRE_CONFIRMATION='false'
+
+# chromedriver
+# export PATH="/Users/dhruv/code/chromedriver:$PATH"
