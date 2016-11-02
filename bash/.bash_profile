@@ -103,3 +103,29 @@ export THEFUCK_REQUIRE_CONFIRMATION='false'
 
 # chromedriver
 # export PATH="/Users/dhruv/code/chromedriver:$PATH"
+
+
+# Insane up and back functions to move within directories.
+function up( )
+{
+LIMIT=$1
+P=$PWD
+for ((i=1; i <= LIMIT; i++))
+do
+    P=$P/..
+done
+cd "$P" || return
+export MPWD=$P
+}
+
+function back( )
+{
+LIMIT=$1
+P=$MPWD
+for ((i=1; i <= LIMIT; i++))
+do
+    P=${P%/..}
+done
+cd "$P" || return
+export MPWD=$P
+}
