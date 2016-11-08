@@ -3,14 +3,14 @@
 
     // tabs and whitespace
     "auto_indent": true,
-    "rulers": [139],
+    "rulers": [119],
     "smart_indent": true,
     "tab_size": 4,
     "trim_automatic_white_space": true,
     "translate_tabs_to_spaces": true,
     "use_tab_stops": true,
     "word_wrap": true,
-    "wrap_width": 140,
+    "wrap_width": 120,
     "ensure_newline_at_eof_on_save": true,
     "folder_exclude_patterns":
     [
