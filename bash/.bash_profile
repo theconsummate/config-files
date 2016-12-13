@@ -56,6 +56,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+alias cdd='cd ~/Downloads'
 
 # alias from boom
 alias tts='adb shell am startservice com.indus.texttospeech/com.indus.texttospeech.TtsService'
@@ -105,6 +106,9 @@ export THEFUCK_REQUIRE_CONFIRMATION='false'
 # chromedriver
 # export PATH="/Users/dhruv/code/chromedriver:$PATH"
 
+# pandoc
+export PYPANDOC_PANDOC=/usr/local/bin/pandoc
+# export PATH="/usr/local/bin/pandoc:$PATH"
 
 # Insane up and back functions to move within directories.
 function up( )
