@@ -46,7 +46,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 
 # git commamands simplified
 alias gst='git status'
-alias gdf='git diff'
+alias gdf='git dsf'
 alias gco='git checkout'
 alias gci='git commit -m '
 alias grb='git rebase'
