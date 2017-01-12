@@ -1,0 +1,64 @@
+{
+  "lists": [
+    {
+      "aws": [
+        {
+          "doc": "ssh -i ~/awsperm/nventi ubuntu@54.187.164.121"
+        },
+        {
+          "kaggle": "ssh -i ~/awsperm/kaggle.pem ubuntu@54.251.168.68"
+        },
+        {
+          "zalak": "ssh zalak@192.168.0.149"
+        },
+        {
+          "wowmongo": "ssh -i ~/awsperm/wow_mongodb root@161.202.204.122"
+        },
+        {
+          "bom-prod": "ssh dhruv@172.18.1.18 -p 3108"
+        },
+        {
+          "wow-staging": "ssh dhruv@10.100.1.163 -p 3108"
+        },
+        {
+          "tts": "ssh dhruv@10.100.2.216 -p 3108"
+        },
+        {
+          "prod-pass": "dhruv@123$#@"
+        },
+        {
+          "staging-pass": "dhruv@\\&H$2-~bkO"
+        },
+        {
+          "build-staging": "ssh dhruv@10.100.1.180 -p 3108"
+        }
+      ]
+    },
+    {
+      "unix": [
+        {
+          "mount": "sudo mount -t ntfs /dev/sdb1 /media"
+        },
+        {
+          "ttsservice": "adb shell am startservice com.indus.texttospeech/com.indus.texttospeech.TtsService"
+        },
+        {
+          "hotspot": "nmcli d wifi hotspot ssid dhruv-wifi password 1234567890"
+        },
+        {
+          "rename-small": "'y/A-Z/a-z/'"
+        }
+      ]
+    },
+    {
+      "dbs": [
+        {
+          "wowm": "mongo --port 27017 --host 161.202.204.122"
+        },
+        {
+          "wowmstaging": "mongo --port 27017 --host 10.100.3.53"
+        }
+      ]
+    }
+  ]
+}
