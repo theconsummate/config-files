@@ -126,3 +126,6 @@ alias ndk='ndk-build "NDK_DEBUG=1"'
 alias edit_exports='sublime ~/code/config-files/.exports'
 alias edit_aliases='sublime ~/code/config-files/.aliases'
 
+## python
+alias python='python2'
+

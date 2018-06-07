@@ -85,5 +85,7 @@
 	"vintage_start_in_command_mode": false,
 	"wide_caret": true,
 	"word_wrap": true,
-	"wrap_width": 120
+	"wrap_width": 120,
+	"spell_check": true,
+	"dictionary": "Packages/Language - English/en_GB.dic"
 }
