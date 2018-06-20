@@ -1,4 +1,5 @@
 # Easier navigation: .., ..., ~ and -
+alias cdd="cd /mount/arbeitsdaten/asr-2/mishradv"
 alias ..="cd .."
 alias cd..="cd .."
 alias ...="cd ../.."
