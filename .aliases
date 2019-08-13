@@ -1,5 +1,6 @@
 # Easier navigation: .., ..., ~ and -
-alias cdd="cd /mount/arbeitsdaten/asr-2/mishradv"
+alias ccd="cd /mount/arbeitsdaten/asr-2/mishradv"
+alias cde="cd /mount/arbeitsdaten/asr-2/mishradv/espnet/egs/wsj/asr1"
 alias ..="cd .."
 alias cd..="cd .."
 alias ...="cd ../.."
