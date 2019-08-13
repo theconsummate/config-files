@@ -125,3 +125,49 @@ PATH=/home/dhruv/install/android-studio/bin:"$PATH"
 PATH=/home/dhruv/Android/Sdk/platform-tools/:"$PATH"
 #export GST_DEBUG_FILE=/home/dhruv/Downloads/gst-rtsp-server-1.6.0/debug.log
 #export GST_DEBUG=INFO
+
+# ps related things
+pps() {
+    #do things with parameters like $1 such as
+    ps -p "$1" -o pid,vsz=MEMORY -o user,group=GROUP -o etime=TIME -o comm,args=ARGS
+}
+
+alias mps='ps -U mishradv -o pid,vsz -o comm,args='
+
+export PATH="$PATH:/opt/mssql-tools/bin"
+export PATH="$PATH:~/bin"
+export PATH="/home/users2/mishradv/anaconda2/bin:$PATH"
+#export PATH="/mount/arbeitsdaten/asr-2/mishradv/cuda-9.0/bin:$PATH"
+#export LD_LIBRARY_PATH=/mount/arbeitsdaten/asr-2/mishradv/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+#CUDAROOT="/mount/arbeitsdaten/asr-2/mishradv/cuda-9.0"
+CUDAROOT="/mount/arbeitsdaten/asr-2/mishradv/cuda-10.1"
+#NCCL_ROOT="/mount/arbeitsdaten/asr-2/mishradv/nccl/nccl_2.2.13-1+cuda9.0_x86_64"
+NCCL_ROOT="/mount/arbeitsdaten/asr-2/mishradv/nccl/nccl_2.4.2-1+cuda10.1_x86_64"
+export PATH=$CUDAROOT/bin:$PATH
+export CPATH=$NCCL_ROOT/include:$CPATH
+
+export LD_LIBRARY_PATH=$NCCL_ROOT/lib/:$CUDAROOT/lib64:$LD_LIBRARY_PATH
+#export LIBRARY_PATH=$NCCL_ROOT/lib/:$LIBRARY_PATH
+export LIBRARY_PATH=$NCCL_ROOT/lib/
+export CUDA_HOME=$CUDAROOT
+export CUDA_PATH=$CUDAROOT
+
+export CFLAGS=-I$CUDAROOT/include
+export LIBRARY_PATH=-L$CUDAROOT/lib64/
+
+# Enable tab completion
+source ~/.git-completion.bash
+
+### MY ALIASES ###
+source ~/code/config-files/.aliases
+
+### MY Functions ###
+source ~/code/config-files/.functions
+
+### MY Exports ###
+source ~/code/config-files/.exports
+
+# Change command prompt
+source ~/.git-prompt.sh
+
