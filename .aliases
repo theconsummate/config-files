@@ -127,5 +127,12 @@ alias edit_exports='sublime ~/code/config-files/.exports'
 alias edit_aliases='sublime ~/code/config-files/.aliases'
 
 ## python
-alias python='python2'
+alias python='python3'
+alias pip='pip3'
+alias pep='pep8 --ignore=E501'
+
+alias term='bash ~/code/terminal_session.sh'
+alias r3='conda activate rasa3'
+alias ac='conda activate ac'
+alias fast='conda activate fastapi'
 

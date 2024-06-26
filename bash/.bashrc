@@ -113,15 +113,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export TTSHOME=/home/mofirst-test/TTSHOME
-export FESTVOXDIR=$TTSHOME/festvox
-export SPTKDIR=$TTSHOME/SPTK-3.8
-export ESTDIR=$TTSHOME/speech_tools
-export FLITEDIR=$TTSHOME/flite-2.0.0-release
-export FLITE_APP_DIR=$TTSHOME/Flite-TTS-Engine-for-Android-master
-export ANDROID_NDK=$TTSHOME/android-ndk-r10e/
-export ANDROID_SDK=$TTSHOME/android-sdk-linux/
-PATH=/home/dhruv/install/android-studio/bin:"$PATH"
-PATH=/home/dhruv/Android/Sdk/platform-tools/:"$PATH"
+# Enable tab completion
+source ~/.git-completion.bash
+
+### MY ALIASES ###
+source ~/code/config-files/.aliases
+
+### MY Functions ###
+source ~/code/config-files/.functions
+
+### MY Exports ###
+source ~/code/config-files/.exports
+
+# Change command prompt
+source ~/.git-prompt.sh
+
 #export GST_DEBUG_FILE=/home/dhruv/Downloads/gst-rtsp-server-1.6.0/debug.log
 #export GST_DEBUG=INFO

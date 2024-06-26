@@ -35,13 +35,13 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 ####################
 ### APACHE SPARK ###
 ####################
-export SPARK_HOME=/usr/local/spark
+# export SPARK_HOME=/usr/local/spark
 
 # export SPARK_HOME=~/install/spark-1.6.1-bin-hadoop2.6
 # export PATH=$SPARK_HOME/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8C)
-export HADOOP_HOME=/usr/local/Cellar/hadoop/2.7.2/libexec/
-export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/2.7.2/libexec/etc/hadoop/
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8C)
+# export HADOOP_HOME=/usr/local/Cellar/hadoop/2.7.2/libexec/
+# export HADOOP_CONF_DIR=/usr/local/Cellar/hadoop/2.7.2/libexec/etc/hadoop/
 
 # Command Prompt
 export PS1="$blue\! $red\T$green\$(__git_ps1)$purple \u:\W $ $reset"
@@ -57,3 +57,5 @@ export PYPANDOC_PANDOC=/usr/local/bin/pandoc
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"l
+
+export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
